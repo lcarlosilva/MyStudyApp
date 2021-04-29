@@ -26,6 +26,7 @@ android {
         setProperty("archivesBaseName", "MyAPP-${versionName}")
         vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
         aaptOptions {
             additionalParameters "--no-version-vectors"
         }
