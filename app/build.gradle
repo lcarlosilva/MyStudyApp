@@ -1,7 +1,17 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'kotlin-android-extensions'
 }
+
+def versionMajor = 0
+def versionMinor = 0
+def versionPatch = 1
+def code = 1
+
+def date = new Date()
+def formattedDate = date.format('ddMMyy_HH:mm')
 
 android {
     compileSdkVersion 29
@@ -11,16 +21,35 @@ android {
         applicationId "com.luiz.mobile.mystudyapp"
         minSdkVersion 24
         targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
-
+        versionCode code
+        versionName "${versionMajor}.${versionMinor}.${versionPatch}"
+        setProperty("archivesBaseName", "MyAPP-${versionName}")
+        vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+        aaptOptions {
+            additionalParameters "--no-version-vectors"
+        }
     }
 
     buildTypes {
+        debug {
+            applicationIdSuffix ".dev"
+            debuggable true
+            //            buildConfigField("String" API_URL URL_BASE)
+            buildConfigField("String",
+                    "NAME_APP_FORMATTED",
+                    "\"MyAPP_${versionMajor}.${versionMinor}.${versionPatch}_${formattedDate}-HML\""
+            )
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            //            buildConfigField("String" API_URL URL_BASE)
+            buildConfigField("String",
+                    "NAME_APP_FORMATTED",
+                    "\"MyAPP_${versionMajor}.${versionMinor}.${versionPatch}_${formattedDate}-PRD\""
+            )
         }
     }
     compileOptions {
@@ -28,18 +57,62 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = jvm_target
+    }
+    buildFeatures {
+        viewBinding true
+    }
+    androidExtensions {
+        experimental = true
     }
 }
 
 dependencies {
-
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation 'androidx.core:core-ktx:1.3.2'
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'com.google.android.material:material:1.3.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-    testImplementation 'junit:junit:4.+'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation "androidx.core:core-ktx:$ktx_version"
+    implementation "androidx.appcompat:appcompat:$appcompat_version"
+    implementation "com.google.android.material:material:$material_version"
+    implementation "androidx.constraintlayout:constraintlayout:$constraint_version"
+
+    //Navigation
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+
+    //Koin
+    implementation "io.insert-koin:koin-android:$koin_version"
+    implementation "io.insert-koin:koin-androidx-workmanager:$koin_version"
+    implementation "io.insert-koin:koin-androidx-compose:$koin_version"
+
+    //Multidex
+    implementation "androidx.multidex:multidex:$multidex_version"
+
+    //Retrofit call apis
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    implementation "com.squareup.okhttp3:okhttp:$okhttp_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
+    implementation "com.google.code.gson:gson:$gson_version"
+
+    //Scan Camera
+    implementation 'com.google.android.gms:play-services-vision:20.1.3'
+
+    //Justified Text
+    implementation "com.uncopt:android.justified:$justified_version"
+
+    testImplementation "junit:junit:$junit_version"
+
+    //Mockito
+    testImplementation "org.mockito:mockito-inline:$mockito_version"
+    testImplementation "org.mockito:mockito-core:$mockito_core_version"
+    testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:$mockitokotlin2_version"
+
+    //Powermock
+    testImplementation "org.powermock:powermock-core:$powermock_version"
+    testImplementation "org.powermock:powermock-module-junit4:$powermock_version"
+    testImplementation "org.powermock:powermock-api-mockito2:$powermock_version"
+
+    testImplementation "androidx.arch.core:core-testing:$arc_testing_version"
+
+    androidTestImplementation "androidx.test.ext:junit:$junit_ext_version"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_version"
 }

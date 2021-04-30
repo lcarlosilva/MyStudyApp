@@ -1,3 +1,10 @@
 <resources>
+    <!-- APP -->
     <string name="app_name">MyStudyApp</string>
+    <string name="app_version">v%s</string>
+    <!-- APP -->
+
+    <!-- MSG -->
+    <string name="msg_hello_world">Hello World!</string>
+    <!-- MSG -->
 </resources>
