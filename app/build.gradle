@@ -111,6 +111,8 @@ dependencies {
     testImplementation "org.powermock:powermock-module-junit4:$powermock_version"
     testImplementation "org.powermock:powermock-api-mockito2:$powermock_version"
 
+    testImplementation "androidx.arch.core:core-testing:$arc_testing_version"
+
     androidTestImplementation "androidx.test.ext:junit:$junit_ext_version"
     androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_version"
 }
