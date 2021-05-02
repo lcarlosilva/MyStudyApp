@@ -24,8 +24,9 @@ buildscript {
     ext.powermock_version = '2.0.0'
     ext.constraint_version = '2.0.4'
     ext.mockito_core_version = '2.+'
+    ext.arc_testing_version = '2.1.0'
+    ext.floatingbutton_version = '1.10.1'
     ext.mockitokotlin2_version = '2.0.0-RC3'
-    ext.arc_testing_version = "2.1.0"
 
     repositories {
         google()
