@@ -71,7 +71,7 @@
             app:fab_colorNormal="#B3E5FC"
             app:fab_colorPressed="@color/black"
             app:fab_size="mini"
-            app:fab_icon="@drawable/ic_baseline_call_split_24"
+            app:fab_icon="@drawable/ic_surround_sound"
             app:fab_title="Label on the right"
             android:tooltipText="@string/text_for_tooltip"/>
 
