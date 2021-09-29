@@ -1,4 +1,4 @@
-package com.luiz.mobile.mystudyapp.view.viewmodel
+package com.luiz.mobile.mystudyapp.view.viewmodel.main
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

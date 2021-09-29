@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.ui.MainActivity">
+    tools:context=".view.ui.main.MainActivity">
 
     <TextView
         android:id="@+id/tv_message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="Hello World!"
         app:layout_constraintBottom_toTopOf="@id/jt_infos_hardware"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Hello World!" />
 
     <com.uncopt.android.widget.text.justify.JustifiedTextView
         android:id="@+id/jt_infos_hardware"
@@ -23,10 +22,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="59dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_message"
-        app:layout_constraintBottom_toBottomOf="parent"
         tools:text="
         Brand: ${Build.BRAND}\n
         Product: ${Build.PRODUCT}\n
@@ -45,12 +44,37 @@
         android:id="@+id/tv_number_version"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="v0.0.0"
         android:layout_marginStart="250dp"
         android:layout_marginTop="50dp"
-        app:layout_constraintTop_toBottomOf="@id/jt_infos_hardware"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/jt_infos_hardware"
+        tools:text="v0.0.0" />
+
+    <com.getbase.floatingactionbutton.FloatingActionsMenu
+        android:id="@+id/float_act_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="22dp"
+        android:layout_marginBottom="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/jt_infos_hardware"
+        app:fab_expandDirection="up"
+        app:fab_labelsPosition="right">
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/float_act_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_colorNormal="#B3E5FC"
+            app:fab_colorPressed="@color/black"
+            app:fab_size="mini"
+            app:fab_icon="@drawable/ic_surround_sound"
+            app:fab_title="Label on the right"
+            android:tooltipText="@string/text_for_tooltip"/>
+
+    </com.getbase.floatingactionbutton.FloatingActionsMenu>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

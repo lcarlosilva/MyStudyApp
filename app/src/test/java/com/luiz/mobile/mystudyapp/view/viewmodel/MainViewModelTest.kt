@@ -3,6 +3,7 @@ package com.luiz.mobile.mystudyapp.view.viewmodel
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.Observer
 import com.luiz.mobile.mystudyapp.domain.repository.MainRepository
+import com.luiz.mobile.mystudyapp.view.viewmodel.main.MainViewModel
 import com.nhaarman.mockitokotlin2.verify
 import org.junit.Assert
 import org.junit.Rule

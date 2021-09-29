@@ -2,7 +2,6 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
-    id 'kotlin-android-extensions'
 }
 
 def versionMajor = 0
@@ -62,9 +61,6 @@ android {
     buildFeatures {
         viewBinding true
     }
-    androidExtensions {
-        experimental = true
-    }
 }
 
 dependencies {
@@ -98,6 +94,9 @@ dependencies {
 
     //Justified Text
     implementation "com.uncopt:android.justified:$justified_version"
+
+    //Float Button
+    implementation "com.getbase:floatingactionbutton:$floatingbutton_version"
 
     testImplementation "junit:junit:$junit_version"
 
