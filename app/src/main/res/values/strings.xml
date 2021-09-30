@@ -16,6 +16,7 @@
 
     <!-- ACTIVITY LIST SPECIES -->
     <string name="lbl_name_specie">Name: %s</string>
+    <string name="lbl_language_specie">Language: %s</string>
     <string name="lbl_classification_specie">Classification: %s</string>
     <string name="lbl_designation_specie">Designation: %s</string>
     <!-- ACTIVITY LIST SPECIES -->

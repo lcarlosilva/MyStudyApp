@@ -12,9 +12,9 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cl_item_species"
-        android:padding="4dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:padding="4dp">
 
         <TextView
             android:id="@+id/tv_name_species"
@@ -28,13 +28,23 @@
             tools:text="name: Human" />
 
         <TextView
+            android:id="@+id/tv_language_species"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_name_species"
+            tools:text="language: Galactic Basic" />
+
+        <TextView
             android:id="@+id/tv_classification_species"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="3dp"
             android:textSize="17sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_name_species"
+            app:layout_constraintTop_toBottomOf="@id/tv_language_species"
             tools:text="classification: mammal" />
 
         <TextView
