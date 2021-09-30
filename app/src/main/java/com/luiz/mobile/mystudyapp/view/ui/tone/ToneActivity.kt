@@ -9,11 +9,13 @@ import android.widget.AdapterView.OnItemClickListener
 import android.widget.ListView
 import android.widget.SeekBar
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.luiz.mobile.mystudyapp.R
 import com.luiz.mobile.mystudyapp.commons.ext.toast
 import com.luiz.mobile.mystudyapp.commons.utils.Tone
 import com.luiz.mobile.mystudyapp.view.adapter.ToneAdapter
+import java.util.*
 
 class ToneActivity : AppCompatActivity() {
 
@@ -24,6 +26,9 @@ class ToneActivity : AppCompatActivity() {
     private lateinit var toneListAdapter: ToneAdapter
 
     private var toneGenerator: ToneGenerator? = null
+
+    private val timer = Timer()
+    private val DELAY: Long = 1000
 
     companion object {
         fun intent(context: Context): Intent {
@@ -52,13 +57,20 @@ class ToneActivity : AppCompatActivity() {
         toneListAdapter = ToneAdapter(this, R.layout.row, Tone.tones)
         toneList.adapter = toneListAdapter
         toneList.onItemClickListener =
-            OnItemClickListener { parent, _, position, _ ->
-                val t = parent.getItemAtPosition(position) as Tone
-                val type = t.toneType
-                val durationMs = toneDurBar!!.progress
-                toneGenerator!!.startTone(type, durationMs)
-            }
-
-        toast(msgText = "FOI MENINÃO!")
+                OnItemClickListener { parent, _, position, _ ->
+                    val t = parent.getItemAtPosition(position) as Tone
+                    val type = t.toneType
+                    val durationMs = toneDurBar!!.progress
+                    toneGenerator!!.startTone(type, durationMs)
+                }
+        val toast = Toast.makeText(baseContext, "MENSAGEM", Toast.LENGTH_LONG)
+        timer.schedule(
+                object : TimerTask() {
+                    override fun run() {
+                        toast.show()
+                    }
+                },
+                DELAY
+        )
     }
 }

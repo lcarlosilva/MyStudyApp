@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.luiz.mobile.mystudyapp">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:name=".App"
         android:allowBackup="true"
@@ -9,8 +12,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <!--android:theme="@style/Theme.MyStudyApp">-->
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
         <activity android:name=".view.ui.main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,6 +23,7 @@
         <activity
             android:name=".view.ui.tone.ToneActivity"
             android:parentActivityName=".view.ui.main.MainActivity" />
+        <activity android:name=".view.ui.star_wars.StarWarsActivity"
+            android:parentActivityName=".view.ui.main.MainActivity" />
     </application>
-
 </manifest>

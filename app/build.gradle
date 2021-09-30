@@ -12,6 +12,11 @@ def code = 1
 def date = new Date()
 def formattedDate = date.format('ddMMyy_HH:mm')
 
+def API_STAR_WARS = "API_STAR_WARS"
+def URL_BASE_ST_WR = "\"https://swapi.dev/api/\""
+
+//def API_MOCK = ""
+
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
@@ -35,7 +40,8 @@ android {
         debug {
             applicationIdSuffix ".dev"
             debuggable true
-            //            buildConfigField("String" API_URL URL_BASE)
+            buildConfigField("String", API_STAR_WARS, URL_BASE_ST_WR)
+            //            buildConfigField("String", API_MOCK, URL_BASE_MOCK)
             buildConfigField("String",
                     "NAME_APP_FORMATTED",
                     "\"MyAPP_${versionMajor}.${versionMinor}.${versionPatch}_${formattedDate}-HML\""
@@ -44,7 +50,8 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            //            buildConfigField("String" API_URL URL_BASE)
+            //            buildConfigField("String", API_STAR_WARS, URL_BASE_ST_WR)
+            //            buildConfigField("String", API_MOCK, URL_BASE_MOCK)
             buildConfigField("String",
                     "NAME_APP_FORMATTED",
                     "\"MyAPP_${versionMajor}.${versionMinor}.${versionPatch}_${formattedDate}-PRD\""
