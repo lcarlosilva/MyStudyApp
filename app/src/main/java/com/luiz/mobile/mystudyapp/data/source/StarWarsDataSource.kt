@@ -1,5 +1,6 @@
 package com.luiz.mobile.mystudyapp.data.source
 
+import android.util.Log
 import com.luiz.mobile.mystudyapp.data.response.BaseResponse
 import com.luiz.mobile.mystudyapp.data.service.StarWarsService
 import com.luiz.mobile.mystudyapp.domain.entity.Species
@@ -17,14 +18,20 @@ class StarWarsDataSource(private val service: StarWarsService): StarWarsReposito
                 when {
                     response.isSuccessful -> {
                         response.body()?.let {
+                            Log.i("SUCCESS response result - ", it.results.toString())
                             resultCallback.invoke(BaseResult.Success(it.results))
                         }
+                    }
+                    else -> {
+                        Log.i("ERROR response errorBody - ", response.message())
+                        resultCallback.invoke(BaseResult.NetworkError(response.errorBody().toString()))
                     }
                 }
             }
 
             override fun onFailure(call: Call<BaseResponse<Species>>, t: Throwable) {
-                TODO("Not yet implemented")
+                Log.i("onFailure - ", t.message.toString())
+                resultCallback.invoke(BaseResult.ServerError(t.message.toString()))
             }
         })
     }

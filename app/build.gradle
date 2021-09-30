@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    id 'kotlin-android-extensions'
 }
 
 def versionMajor = 0
@@ -15,7 +16,8 @@ def formattedDate = date.format('ddMMyy_HH:mm')
 def API_STAR_WARS = "API_STAR_WARS"
 def URL_BASE_ST_WR = "\"https://swapi.dev/api/\""
 
-//def API_MOCK = ""
+//def API_MOCK = "API_MOCK"
+//def URL_BASE_MOCK = "https://run.mocky.io/v3/e15cbebe-afd2-49f0-b2b5-93538564d88e"
 
 android {
     compileSdkVersion 29

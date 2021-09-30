@@ -10,14 +10,13 @@ import android.widget.ListView
 import android.widget.SeekBar
 import android.widget.TextView
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import com.luiz.mobile.mystudyapp.R
-import com.luiz.mobile.mystudyapp.commons.ext.toast
 import com.luiz.mobile.mystudyapp.commons.utils.Tone
+import com.luiz.mobile.mystudyapp.view.BaseActivity
 import com.luiz.mobile.mystudyapp.view.adapter.ToneAdapter
 import java.util.*
 
-class ToneActivity : AppCompatActivity() {
+class ToneActivity : BaseActivity() {
 
     private lateinit var toneDurBar: SeekBar
     private lateinit var toneDurText: TextView
