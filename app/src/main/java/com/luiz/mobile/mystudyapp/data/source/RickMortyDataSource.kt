@@ -11,10 +11,13 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class RickMortyDataSource(private val service: RickMortyService) : RickMortyRepository {
-    override fun species(resultCallback: (result: BaseResult) -> Unit) {
-        val callAsync = service.species()
+    override fun characters(resultCallback: (result: BaseResult) -> Unit) {
+        val callAsync = service.characters()
         callAsync.enqueue(object : Callback<BaseResponse<Character>> {
-            override fun onResponse(call: Call<BaseResponse<Character>>, response: Response<BaseResponse<Character>>) {
+            override fun onResponse(
+                call: Call<BaseResponse<Character>>,
+                response: Response<BaseResponse<Character>>
+            ) {
                 when {
                     response.isSuccessful -> {
                         response.body()?.let {
@@ -24,10 +27,15 @@ class RickMortyDataSource(private val service: RickMortyService) : RickMortyRepo
                     }
                     else -> {
                         Log.i("ERROR response errorBody - ", response.message())
-                        resultCallback.invoke(BaseResult.NetworkError(response.errorBody().toString()))
+                        resultCallback.invoke(
+                            BaseResult.NetworkError(
+                                response.errorBody().toString()
+                            )
+                        )
                     }
                 }
             }
+
             override fun onFailure(call: Call<BaseResponse<Character>>, t: Throwable) {
                 Log.i("onFailure - ", t.message.toString())
                 resultCallback.invoke(BaseResult.ServerError(t.message.toString()))

@@ -13,8 +13,8 @@ class RickMortyViewModel(private val repository: RickMortyRepository) : ViewMode
     val networkErrorLiveData: MutableLiveData<String> = MutableLiveData()
     val serverErrorLiveData: MutableLiveData<String> = MutableLiveData()
 
-    fun species() {
-        repository.species { result ->
+    fun characters() {
+        repository.characters { result ->
             when (result) {
                 is BaseResult.Success -> {
                     successLiveData.postValue(result.value as ArrayList<Character>)

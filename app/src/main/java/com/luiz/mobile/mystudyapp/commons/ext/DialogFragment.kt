@@ -31,5 +31,8 @@ fun DialogFragment.setWidthHeightPercent(percentage: Int) {
 }
 
 fun DialogFragment.setFullScreen() {
-    dialog?.window?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+    dialog?.window?.setLayout(
+        ViewGroup.LayoutParams.MATCH_PARENT,
+        ViewGroup.LayoutParams.WRAP_CONTENT
+    )
 }

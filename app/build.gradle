@@ -24,13 +24,13 @@ def URL_BASE_RICK_MORTY = "\"https://rickandmortyapi.com/api/\""
 //def URL_BASE_MOCK = "https://run.mocky.io/v3/e15cbebe-afd2-49f0-b2b5-93538564d88e"
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 30
     buildToolsVersion "29.0.3"
 
     defaultConfig {
         applicationId "com.luiz.mobile.mystudyapp"
         minSdkVersion 24
-        targetSdkVersion 29
+        targetSdkVersion 30
         versionCode code
         versionName "${versionMajor}.${versionMinor}.${versionPatch}"
         setProperty("archivesBaseName", "MyAPP-${versionName}")
@@ -110,6 +110,9 @@ dependencies {
 
     //Float Button
     implementation "com.getbase:floatingactionbutton:$floatingbutton_version"
+
+    //glide
+    implementation "com.github.bumptech.glide:glide:$glide_version"
 
     testImplementation "junit:junit:$junit_version"
 

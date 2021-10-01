@@ -56,20 +56,20 @@ class ToneActivity : BaseActivity() {
         toneListAdapter = ToneAdapter(this, R.layout.row, Tone.tones)
         toneList.adapter = toneListAdapter
         toneList.onItemClickListener =
-                OnItemClickListener { parent, _, position, _ ->
-                    val t = parent.getItemAtPosition(position) as Tone
-                    val type = t.toneType
-                    val durationMs = toneDurBar!!.progress
-                    toneGenerator!!.startTone(type, durationMs)
-                }
+            OnItemClickListener { parent, _, position, _ ->
+                val t = parent.getItemAtPosition(position) as Tone
+                val type = t.toneType
+                val durationMs = toneDurBar.progress
+                toneGenerator!!.startTone(type, durationMs)
+            }
         val toast = Toast.makeText(baseContext, "MENSAGEM", Toast.LENGTH_LONG)
         timer.schedule(
-                object : TimerTask() {
-                    override fun run() {
-                        toast.show()
-                    }
-                },
-                DELAY
+            object : TimerTask() {
+                override fun run() {
+                    toast.show()
+                }
+            },
+            DELAY
         )
     }
 }

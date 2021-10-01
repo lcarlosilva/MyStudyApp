@@ -7,8 +7,8 @@ import com.luiz.mobile.mystudyapp.R
 open class BaseActivity : AppCompatActivity() {
     fun buildCircleProgress(): AlertDialog {
         val circleProgress = layoutInflater.inflate(R.layout.circle_progress, null)
-        val progressDialog = AlertDialog.Builder(circleProgress.context, R.style.TransparentProgressDialog)
-        progressDialog.setView(circleProgress)
-        return progressDialog.create()
+        val dialog = AlertDialog.Builder(circleProgress.context, R.style.TransparentProgress)
+        dialog.setView(circleProgress)
+        return dialog.create()
     }
 }

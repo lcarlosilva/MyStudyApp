@@ -18,9 +18,12 @@
     <string name="txt_value_ms">%s ms</string>
     <!-- TONE ACTIVITY -->
 
-    <!-- ACTIVITY LIST CHARACTER -->
-    <string name="lbl_name_specie">Name: %s</string>
+    <!-- LABELS -->
+    <string name="lbl_character_name">Name: %s</string>
     <string name="lbl_character_specie">Species: %s</string>
     <string name="lbl_character_gender">Gender: %s</string>
-    <!-- ACTIVITY LIST CHARACTER -->
+    <string name="lbl_character_status">Status: %s</string>
+    <string name="lbl_character_origin">Origin: %s</string>
+    <string name="lbl_character_location">Location: %s</string>
+    <!-- LABELS -->
 </resources>

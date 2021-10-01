@@ -6,8 +6,6 @@ import retrofit2.Call
 import retrofit2.http.GET
 
 interface RickMortyService {
-
     @GET("character")
-    fun species() : Call<BaseResponse<Character>>
-
+    fun characters(): Call<BaseResponse<Character>>
 }

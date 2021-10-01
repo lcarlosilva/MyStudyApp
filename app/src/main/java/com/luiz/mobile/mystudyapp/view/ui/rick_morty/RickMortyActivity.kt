@@ -75,6 +75,6 @@ class RickMortyActivity : BaseActivity() {
             toast(msgText = msgSrvErr)
             mCircleProgress.hide()
         })
-        viewModel.species()
+        viewModel.characters()
     }
 }
