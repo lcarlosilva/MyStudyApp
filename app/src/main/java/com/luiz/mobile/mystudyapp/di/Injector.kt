@@ -15,5 +15,6 @@ fun Application.inject() {
 
 fun getModules() = listOf(
     viewModule(),
-    dataModule()
+    dataModule(),
+    networkModule()
 )

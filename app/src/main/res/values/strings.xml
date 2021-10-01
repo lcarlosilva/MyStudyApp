@@ -6,10 +6,24 @@
 
     <!-- MSG -->
     <string name="msg_hello_world">Hello World!</string>
-    <string name="text_for_tooltip">text for tooltipx</string>
+    <string name="txt_for_tooltip_tone">Listen some Tone</string>
+    <string name="txt_for_tooltip_rick_morty">Know about Rick and Morty</string>
     <!-- MSG -->
+
+    <!-- BUTTONS -->
+    <string name="txt_btn_ok">OK</string>
+    <!-- BUTTONS -->
 
     <!-- TONE ACTIVITY -->
     <string name="txt_value_ms">%s ms</string>
     <!-- TONE ACTIVITY -->
+
+    <!-- LABELS -->
+    <string name="lbl_character_name">Name: %s</string>
+    <string name="lbl_character_specie">Species: %s</string>
+    <string name="lbl_character_gender">Gender: %s</string>
+    <string name="lbl_character_status">Status: %s</string>
+    <string name="lbl_character_origin">Origin: %s</string>
+    <string name="lbl_character_location">Location: %s</string>
+    <!-- LABELS -->
 </resources>

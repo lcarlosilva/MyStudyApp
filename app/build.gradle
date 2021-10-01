@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    id 'kotlin-android-extensions'
 }
 
 def versionMajor = 0
@@ -12,14 +13,24 @@ def code = 1
 def date = new Date()
 def formattedDate = date.format('ddMMyy_HH:mm')
 
+//def API_STAR_WARS = "API_STAR_WARS"
+//def URL_BASE_ST_WR = "\"https://swapi.dev/api/\""
+def API_RICK_MORTY = "API_RICK_MORTY"
+def URL_BASE_RICK_MORTY = "\"https://rickandmortyapi.com/api/\""
+
+//https://rickandmortyapi.com/api
+
+//def API_MOCK = "API_MOCK"
+//def URL_BASE_MOCK = "https://run.mocky.io/v3/e15cbebe-afd2-49f0-b2b5-93538564d88e"
+
 android {
-    compileSdkVersion 29
+    compileSdkVersion 30
     buildToolsVersion "29.0.3"
 
     defaultConfig {
         applicationId "com.luiz.mobile.mystudyapp"
         minSdkVersion 24
-        targetSdkVersion 29
+        targetSdkVersion 30
         versionCode code
         versionName "${versionMajor}.${versionMinor}.${versionPatch}"
         setProperty("archivesBaseName", "MyAPP-${versionName}")
@@ -35,7 +46,8 @@ android {
         debug {
             applicationIdSuffix ".dev"
             debuggable true
-            //            buildConfigField("String" API_URL URL_BASE)
+            buildConfigField("String", API_RICK_MORTY, URL_BASE_RICK_MORTY)
+            //            buildConfigField("String", API_MOCK, URL_BASE_MOCK)
             buildConfigField("String",
                     "NAME_APP_FORMATTED",
                     "\"MyAPP_${versionMajor}.${versionMinor}.${versionPatch}_${formattedDate}-HML\""
@@ -44,7 +56,8 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            //            buildConfigField("String" API_URL URL_BASE)
+            //            buildConfigField("String", API_STAR_WARS, URL_BASE_ST_WR)
+            //            buildConfigField("String", API_MOCK, URL_BASE_MOCK)
             buildConfigField("String",
                     "NAME_APP_FORMATTED",
                     "\"MyAPP_${versionMajor}.${versionMinor}.${versionPatch}_${formattedDate}-PRD\""
@@ -97,6 +110,9 @@ dependencies {
 
     //Float Button
     implementation "com.getbase:floatingactionbutton:$floatingbutton_version"
+
+    //glide
+    implementation "com.github.bumptech.glide:glide:$glide_version"
 
     testImplementation "junit:junit:$junit_version"
 
