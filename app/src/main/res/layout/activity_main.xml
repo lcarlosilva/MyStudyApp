@@ -82,9 +82,9 @@
             app:fab_colorNormal="#B3E5FC"
             app:fab_colorPressed="@color/grey"
             app:fab_size="mini"
-            app:fab_icon="@mipmap/ic_vader_darth"
+            app:fab_icon="@drawable/ic_rick_sanchez"
             app:fab_title="Label on the right"
-            android:tooltipText="@string/txt_for_tooltip_stars_war"/>
+            android:tooltipText="@string/txt_for_tooltip_rick_morty"/>
 
     </com.getbase.floatingactionbutton.FloatingActionsMenu>
 

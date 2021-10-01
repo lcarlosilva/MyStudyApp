@@ -6,7 +6,7 @@ import com.getbase.floatingactionbutton.FloatingActionButton
 import com.luiz.mobile.mystudyapp.BuildConfig
 import com.luiz.mobile.mystudyapp.R
 import com.luiz.mobile.mystudyapp.view.BaseActivity
-import com.luiz.mobile.mystudyapp.view.ui.star_wars.StarWarsActivity
+import com.luiz.mobile.mystudyapp.view.ui.rick_morty.RickMortyActivity
 import com.luiz.mobile.mystudyapp.view.ui.tone.ToneActivity
 import com.luiz.mobile.mystudyapp.view.viewmodel.main.MainViewModel
 import com.uncopt.android.widget.text.justify.JustifiedTextView
@@ -37,7 +37,7 @@ class MainActivity : BaseActivity() {
             startActivity(ToneActivity.intent(this))
         }
         mFloatActBtnStWar.setOnClickListener {
-            startActivity(StarWarsActivity.intent(this))
+            startActivity(RickMortyActivity.intent(this))
         }
     }
 

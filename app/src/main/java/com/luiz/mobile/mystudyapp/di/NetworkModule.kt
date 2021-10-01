@@ -3,7 +3,7 @@ package com.luiz.mobile.mystudyapp.di
 import com.google.gson.GsonBuilder
 import com.luiz.mobile.mystudyapp.BuildConfig
 import com.luiz.mobile.mystudyapp.data.interceptor.AuthInterceptor
-import com.luiz.mobile.mystudyapp.data.service.StarWarsService
+import com.luiz.mobile.mystudyapp.data.service.RickMortyService
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -29,10 +29,10 @@ fun networkModule() = module {
     factory<Converter.Factory> { GsonConverterFactory.create(get()) }
 
     single { provideRetrofit(get(API_URL), get(), get()) }
-    single { get<Retrofit>().create<StarWarsService>() }
+    single { get<Retrofit>().create<RickMortyService>() }
 }
 
-private fun provideApiUrlStarWars() = BuildConfig.API_STAR_WARS
+private fun provideApiUrlStarWars() = BuildConfig.API_RICK_MORTY
 
 private fun provideGson() = GsonBuilder().create()
 

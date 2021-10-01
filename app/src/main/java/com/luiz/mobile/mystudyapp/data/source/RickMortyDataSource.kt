@@ -2,19 +2,19 @@ package com.luiz.mobile.mystudyapp.data.source
 
 import android.util.Log
 import com.luiz.mobile.mystudyapp.data.response.BaseResponse
-import com.luiz.mobile.mystudyapp.data.service.StarWarsService
-import com.luiz.mobile.mystudyapp.domain.entity.Species
-import com.luiz.mobile.mystudyapp.domain.repository.StarWarsRepository
+import com.luiz.mobile.mystudyapp.data.service.RickMortyService
+import com.luiz.mobile.mystudyapp.domain.entity.Character
+import com.luiz.mobile.mystudyapp.domain.repository.RickMortyRepository
 import com.luiz.mobile.mystudyapp.domain.result.BaseResult
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class StarWarsDataSource(private val service: StarWarsService): StarWarsRepository {
+class RickMortyDataSource(private val service: RickMortyService) : RickMortyRepository {
     override fun species(resultCallback: (result: BaseResult) -> Unit) {
         val callAsync = service.species()
-        callAsync.enqueue(object : Callback<BaseResponse<Species>>{
-            override fun onResponse(call: Call<BaseResponse<Species>>, response: Response<BaseResponse<Species>>) {
+        callAsync.enqueue(object : Callback<BaseResponse<Character>> {
+            override fun onResponse(call: Call<BaseResponse<Character>>, response: Response<BaseResponse<Character>>) {
                 when {
                     response.isSuccessful -> {
                         response.body()?.let {
@@ -28,8 +28,7 @@ class StarWarsDataSource(private val service: StarWarsService): StarWarsReposito
                     }
                 }
             }
-
-            override fun onFailure(call: Call<BaseResponse<Species>>, t: Throwable) {
+            override fun onFailure(call: Call<BaseResponse<Character>>, t: Throwable) {
                 Log.i("onFailure - ", t.message.toString())
                 resultCallback.invoke(BaseResult.ServerError(t.message.toString()))
             }

@@ -17,7 +17,7 @@
         android:padding="4dp">
 
         <TextView
-            android:id="@+id/tv_name_species"
+            android:id="@+id/tv_name_character"
             style="@style/TextBlackTheme"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -28,34 +28,24 @@
             tools:text="name: Human" />
 
         <TextView
-            android:id="@+id/tv_language_species"
+            android:id="@+id/tv_species_character"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="3dp"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_name_species"
+            app:layout_constraintTop_toBottomOf="@id/tv_name_character"
             tools:text="language: Galactic Basic" />
 
         <TextView
-            android:id="@+id/tv_classification_species"
+            android:id="@+id/tv_gender_character"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="3dp"
             android:textSize="17sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_language_species"
+            app:layout_constraintTop_toBottomOf="@id/tv_species_character"
             tools:text="classification: mammal" />
-
-        <TextView
-            android:id="@+id/tv_designation_species"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="3dp"
-            android:textSize="17sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_classification_species"
-            tools:text="designation: sentient" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>

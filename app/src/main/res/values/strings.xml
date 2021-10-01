@@ -7,17 +7,20 @@
     <!-- MSG -->
     <string name="msg_hello_world">Hello World!</string>
     <string name="txt_for_tooltip_tone">Listen some Tone</string>
-    <string name="txt_for_tooltip_stars_war">Know about Star Wars</string>
+    <string name="txt_for_tooltip_rick_morty">Know about Rick and Morty</string>
     <!-- MSG -->
+
+    <!-- BUTTONS -->
+    <string name="txt_btn_ok">OK</string>
+    <!-- BUTTONS -->
 
     <!-- TONE ACTIVITY -->
     <string name="txt_value_ms">%s ms</string>
     <!-- TONE ACTIVITY -->
 
-    <!-- ACTIVITY LIST SPECIES -->
+    <!-- ACTIVITY LIST CHARACTER -->
     <string name="lbl_name_specie">Name: %s</string>
-    <string name="lbl_language_specie">Language: %s</string>
-    <string name="lbl_classification_specie">Classification: %s</string>
-    <string name="lbl_designation_specie">Designation: %s</string>
-    <!-- ACTIVITY LIST SPECIES -->
+    <string name="lbl_character_specie">Species: %s</string>
+    <string name="lbl_character_gender">Gender: %s</string>
+    <!-- ACTIVITY LIST CHARACTER -->
 </resources>

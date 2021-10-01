@@ -23,7 +23,7 @@
         <activity
             android:name=".view.ui.tone.ToneActivity"
             android:parentActivityName=".view.ui.main.MainActivity" />
-        <activity android:name=".view.ui.star_wars.StarWarsActivity"
+        <activity android:name=".view.ui.rick_morty.RickMortyActivity"
             android:parentActivityName=".view.ui.main.MainActivity" />
     </application>
 </manifest>

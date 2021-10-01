@@ -1,13 +1,13 @@
 package com.luiz.mobile.mystudyapp.data.service
 
 import com.luiz.mobile.mystudyapp.data.response.BaseResponse
-import com.luiz.mobile.mystudyapp.domain.entity.Species
+import com.luiz.mobile.mystudyapp.domain.entity.Character
 import retrofit2.Call
 import retrofit2.http.GET
 
-interface StarWarsService {
+interface RickMortyService {
 
-    @GET("species")
-    fun species() : Call<BaseResponse<Species>>
+    @GET("character")
+    fun species() : Call<BaseResponse<Character>>
 
 }
