@@ -12,7 +12,7 @@ import kotlinx.android.synthetic.main.item_list_character.view.*
 
 private const val DETAIL_FRAGMENT = "Detail_Fragment"
 
-class CharacterAdapter(private val list: List<Character>) :
+class CharacterAdapter(private val characters: List<Character>) :
     RecyclerView.Adapter<CharacterAdapter.CharacterViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CharacterViewHolder {
         val inflateItemView = LayoutInflater.from(parent.context)
@@ -21,9 +21,9 @@ class CharacterAdapter(private val list: List<Character>) :
     }
 
     override fun onBindViewHolder(holder: CharacterViewHolder, position: Int) =
-        holder.bindView(list[position])
+        holder.bindView(characters[position])
 
-    override fun getItemCount(): Int = list.count()
+    override fun getItemCount(): Int = characters.count()
 
     class CharacterViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 

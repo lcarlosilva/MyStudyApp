@@ -26,6 +26,7 @@
 
     <color name="white">#FFFFFFFF</color>
     <color name="grey">#CCC</color>
+    <color name="dark_grey">#A5A5A5</color>
     <color name="black">#FF000000</color>
     <color name="black_overlay">#66000000</color>
     <color name="text_color_message">#404040</color>

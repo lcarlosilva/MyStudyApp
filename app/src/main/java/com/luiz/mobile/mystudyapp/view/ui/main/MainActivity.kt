@@ -6,6 +6,7 @@ import com.getbase.floatingactionbutton.FloatingActionButton
 import com.luiz.mobile.mystudyapp.BuildConfig
 import com.luiz.mobile.mystudyapp.R
 import com.luiz.mobile.mystudyapp.view.BaseActivity
+import com.luiz.mobile.mystudyapp.view.ui.contact.ContactListsActivity
 import com.luiz.mobile.mystudyapp.view.ui.rick_morty.RickMortyActivity
 import com.luiz.mobile.mystudyapp.view.ui.tone.ToneActivity
 import com.luiz.mobile.mystudyapp.view.viewmodel.main.MainViewModel
@@ -20,7 +21,8 @@ class MainActivity : BaseActivity() {
     private lateinit var mTvVersionAPP: TextView
     private lateinit var mTvInfosDevice: JustifiedTextView
     private lateinit var mFloatActBtnTone: FloatingActionButton
-    private lateinit var mFloatActBtnStWar: FloatingActionButton
+    private lateinit var mFloatActBtnRickMorty: FloatingActionButton
+    private lateinit var mFloatActBtnContacts: FloatingActionButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,8 +38,11 @@ class MainActivity : BaseActivity() {
         mFloatActBtnTone.setOnClickListener {
             startActivity(ToneActivity.intent(this))
         }
-        mFloatActBtnStWar.setOnClickListener {
+        mFloatActBtnRickMorty.setOnClickListener {
             startActivity(RickMortyActivity.intent(this))
+        }
+        mFloatActBtnContacts.setOnClickListener {
+            startActivity(ContactListsActivity.intent(this))
         }
     }
 
@@ -46,7 +51,8 @@ class MainActivity : BaseActivity() {
         mTvVersionAPP = findViewById(R.id.tv_number_version)
         mTvInfosDevice = findViewById(R.id.jt_infos_hardware)
         mFloatActBtnTone = findViewById(R.id.fab_listen_tone)
-        mFloatActBtnStWar = findViewById(R.id.fab_star_wars)
+        mFloatActBtnRickMorty = findViewById(R.id.fab_rick_morty)
+        mFloatActBtnContacts = findViewById(R.id.fab_contacts)
     }
 
     private fun requestDeviceSpecs() {
