@@ -76,6 +76,6 @@ class ContactViewModel(private val repository: ContactRepository) : ViewModel() 
         }
     }
 
-    fun buildContact(name: String, age: String, city: String): Contact =
-        Contact(name = name, age = age.toInt(), city = city)
+    fun buildContact(id: Long = 0L, name: String, age: String, city: String): Contact =
+        Contact(id = id, name = name, age = age, city = city)
 }

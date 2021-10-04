@@ -3,17 +3,16 @@ package com.luiz.mobile.mystudyapp.domain.entity
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import java.io.Serializable
 
 @Entity(tableName = "tb_contact")
 data class Contact(
     @PrimaryKey(autoGenerate = true)
-    val id: Long = 0L,
+    var id: Long = 0L,
     @ColumnInfo(name = "contact_name")
-    val name: String,
+    var name: String = "",
     @ColumnInfo(name = "contact_age")
-    val age: Int,
+    var age: String = "",
     @ColumnInfo(name = "contact_city")
-    val city: String,
-    /*@ColumnInfo(name = "contact_link")
-    val link: LinkStatus,*/
-)
+    var city: String = ""
+) : Serializable

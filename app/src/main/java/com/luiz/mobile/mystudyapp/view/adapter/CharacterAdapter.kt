@@ -36,7 +36,7 @@ class CharacterAdapter(private val characters: List<Character>) :
             val baseActivity = itemView.context as? BaseActivity
             val resources = this.itemView.resources
 
-            nameCharacter.text = resources.getString(R.string.lbl_character_name, character.name)
+            nameCharacter.text = resources.getString(R.string.lbl_name, character.name)
             speciesCharacter.text = resources.getString(R.string.lbl_character_specie, character.species)
             genderCharacter.text = resources.getString(R.string.lbl_character_gender, character.gender)
 
