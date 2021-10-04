@@ -23,7 +23,14 @@
         <activity
             android:name=".view.ui.tone.ToneActivity"
             android:parentActivityName=".view.ui.main.MainActivity" />
-        <activity android:name=".view.ui.rick_morty.RickMortyActivity"
+        <activity
+            android:name=".view.ui.rick_morty.RickMortyActivity"
             android:parentActivityName=".view.ui.main.MainActivity" />
+        <activity
+            android:name=".view.ui.contact.ContactListsActivity"
+            android:parentActivityName=".view.ui.main.MainActivity" />
+        <activity
+            android:name=".view.ui.contact.ContactActivity"
+            android:parentActivityName=".view.ui.contact.ContactListsActivity" />
     </application>
 </manifest>

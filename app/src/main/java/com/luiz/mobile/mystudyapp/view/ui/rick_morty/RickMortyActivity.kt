@@ -20,10 +20,10 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class RickMortyActivity : BaseActivity() {
 
-    private lateinit var mCircleProgress: AlertDialog
+    private lateinit var mIvError: ImageView
     private lateinit var mVfItems: ViewFlipper
     private lateinit var mTvMsgError: TextView
-    private lateinit var mIvError: ImageView
+    private lateinit var mCircleProgress: AlertDialog
 
     private lateinit var mRvSpecies: RecyclerView
     private val viewModel: RickMortyViewModel by viewModel()
@@ -41,10 +41,7 @@ class RickMortyActivity : BaseActivity() {
         setContentView(R.layout.activity_rick_morty)
         mCircleProgress = buildCircleProgress()
 
-        mRvSpecies = findViewById(R.id.rv_species)
-        mVfItems = findViewById(R.id.vf_items)
-        mTvMsgError = findViewById(R.id.tv_msg_error)
-        mIvError = findViewById(R.id.iv_error)
+        findView()
 
         mCircleProgress.show()
 
@@ -55,7 +52,7 @@ class RickMortyActivity : BaseActivity() {
                 val adapter = CharacterAdapter(it)
                 mRvSpecies.adapter = adapter
                 mRvSpecies.setHasFixedSize(true)
-                mRvSpecies.layoutManager = LinearLayoutManager(this)
+                mRvSpecies.layoutManager = LinearLayoutManager(this@RickMortyActivity)
                 mCircleProgress.hide()
             }
         })
@@ -76,5 +73,12 @@ class RickMortyActivity : BaseActivity() {
             mCircleProgress.hide()
         })
         viewModel.characters()
+    }
+
+    private fun findView() {
+        mRvSpecies = findViewById(R.id.rv_species)
+        mVfItems = findViewById(R.id.vf_items_rick_morty)
+        mTvMsgError = findViewById(R.id.tv_msg_except)
+        mIvError = findViewById(R.id.iv_except)
     }
 }

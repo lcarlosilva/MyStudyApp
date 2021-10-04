@@ -6,12 +6,26 @@
 
     <!-- MSG -->
     <string name="msg_hello_world">Hello World!</string>
-    <string name="txt_for_tooltip_tone">Listen some Tone</string>
-    <string name="txt_for_tooltip_rick_morty">Know about Rick and Morty</string>
+    <string name="msg_do_you_want_remove_contact">Deseja remover esse Contato da lista?</string>
+    <string name="msg_does_not_have_any_registered_contact">Você ainda não possui contatos cadastrados.</string>
     <!-- MSG -->
 
+    <!-- TITLE -->
+    <string name="title_remove_contact">Remover Contato</string>
+    <!-- TITLE -->
+
+    <!-- TOOLTIP -->
+    <string name="tooltip_txt_tone">Listen some Tone</string>
+    <string name="tooltip_txt_add_contact">Add contact</string>
+    <string name="tooltip_txt_crud">Save your contact information</string>
+    <string name="tooltip_txt_rick_morty">Know about Rick and Morty</string>
+    <!-- TOOLTIP -->
+
     <!-- BUTTONS -->
-    <string name="txt_btn_ok">OK</string>
+    <string name="btn_txt_ok">OK</string>
+    <string name="btn_txt_no">Não</string>
+    <string name="btn_txt_yes">Sim</string>
+    <string name="btn_txt_save">Salvar</string>
     <!-- BUTTONS -->
 
     <!-- TONE ACTIVITY -->
@@ -19,11 +33,18 @@
     <!-- TONE ACTIVITY -->
 
     <!-- LABELS -->
-    <string name="lbl_character_name">Name: %s</string>
+    <string name="lbl_name">Name: %s</string>
+    <string name="lbl_age">Idade: %s</string>
     <string name="lbl_character_specie">Species: %s</string>
     <string name="lbl_character_gender">Gender: %s</string>
     <string name="lbl_character_status">Status: %s</string>
     <string name="lbl_character_origin">Origin: %s</string>
     <string name="lbl_character_location">Location: %s</string>
     <!-- LABELS -->
+
+    <!-- HINT -->
+    <string name="hint_name_contact">Nome do Contato</string>
+    <string name="hint_age_contact">Idade do Contato</string>
+    <string name="hint_city_contact">Cidade do Contato</string>
+    <!-- HINT -->
 </resources>

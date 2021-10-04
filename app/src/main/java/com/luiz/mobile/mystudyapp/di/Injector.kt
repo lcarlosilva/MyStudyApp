@@ -14,6 +14,7 @@ fun Application.inject() {
 }
 
 fun getModules() = listOf(
+    daoModule(),
     viewModule(),
     dataModule(),
     networkModule()

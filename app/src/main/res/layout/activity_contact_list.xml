@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <ViewFlipper
-        android:id="@+id/vf_items_rick_morty"
+        android:id="@+id/vf_items_contact"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -44,10 +44,11 @@
 
         <!-- 1 -->
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_species"
+            android:id="@+id/rv_contacts"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="8dp"
-            tools:listitem="@layout/item_list_character" />
+            tools:listitem="@layout/item_list_contact" />
+
     </ViewFlipper>
 </androidx.constraintlayout.widget.ConstraintLayout>

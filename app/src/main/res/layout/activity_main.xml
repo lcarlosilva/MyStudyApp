@@ -57,7 +57,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="22dp"
-        android:layout_marginBottom="60dp"
+        android:layout_marginBottom="170dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/jt_infos_hardware"
@@ -73,10 +73,10 @@
             app:fab_size="mini"
             app:fab_icon="@drawable/ic_surround_sound"
             app:fab_title="Label on the right"
-            android:tooltipText="@string/txt_for_tooltip_tone"/>
+            android:tooltipText="@string/tooltip_txt_tone"/>
 
         <com.getbase.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab_star_wars"
+            android:id="@+id/fab_rick_morty"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:fab_colorNormal="#B3E5FC"
@@ -84,7 +84,18 @@
             app:fab_size="mini"
             app:fab_icon="@drawable/ic_rick_sanchez"
             app:fab_title="Label on the right"
-            android:tooltipText="@string/txt_for_tooltip_rick_morty"/>
+            android:tooltipText="@string/tooltip_txt_rick_morty"/>
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_contacts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_colorNormal="#B3E5FC"
+            app:fab_colorPressed="@color/grey"
+            app:fab_size="mini"
+            app:fab_icon="@drawable/ic_menu_book"
+            app:fab_title="Label on the right"
+            android:tooltipText="@string/tooltip_txt_crud"/>
 
     </com.getbase.floatingactionbutton.FloatingActionsMenu>
 

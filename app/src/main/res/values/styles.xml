@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
         <item name="colorPrimary">@color/light_blue</item>
         <item name="colorPrimaryDark">@color/dark_blue</item>
@@ -10,6 +11,8 @@
         <item name="android:background">@drawable/bg_label</item>
         <item name="android:textColor">#FFF</item>
     </style>
+
+    <style name="ButtonGreenTheme" parent="Widget.AppCompat.Button"></style>
 
     <style name="TextBlackTheme" parent="TextAppearance.AppCompat">
         <item name="android:textColor">@color/black</item>
