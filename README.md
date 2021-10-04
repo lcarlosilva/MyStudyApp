@@ -9,6 +9,8 @@ For dependency control and injection (DI), DSL was adopted [**Koin**][koin].
 * [What is Koin](#what-is-koin)
 * [Required settings](#required-settings)
 
+## What is Koin
+- A lightweight, pragmatic and intelligent dependency injection framework for Kotlin. To keep you focused on your app, not your tools.
 
 # Required settings
 
